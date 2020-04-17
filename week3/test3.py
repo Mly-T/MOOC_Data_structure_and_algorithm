@@ -1,4 +1,4 @@
-#检查输入的左右括号数量是否匹配
+#强迫症老板和他的洗碗工
 class Stack:
     def __init__(self):
         self.items = []
@@ -18,28 +18,23 @@ class Stack:
     def size(self):
         return len(self.items)
 
-input_0 = input()
-check_0 = Stack
-str = "0123456789"
-str.split()
-print(str)
-print(type(str))
+def washdishes(s):
+    stack = []  #用list做的，没用stack
+    for i in s:
+        if len(stack) == 0:
+            stack.append(i)
+        elif i < stack[-1]: # 判断是否往前取编号小的盘子
+            if not i + 1 in stack: # 判断编号大1的盘子是否已经被取走
+                return 'No'
+            else:
+                stack.append(i)
+        else:
+            stack.append(i)
+    return 'Yes'
 
 
-
-
-    
-
-# for i in input_0:
-#     if check_0.isEmpty():
-#         check_0.push(i)
-#         continue
-#     if check_0.peek() == i:
-#         check_0.pop()
-#     else:
-#         check_0.push(i)
-# print(''.join(check_0.items))
-
-
-
-
+dish_index = []
+for i in input():
+    dish_index.append(i)
+#print(type(dish_index))
+print(washdishes(list(map(int, dish_index))))

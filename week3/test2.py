@@ -1,4 +1,4 @@
-#检查输入的左右括号数量是否匹配
+#一维开心消消乐
 class Stack:
     def __init__(self):
         self.items = []
